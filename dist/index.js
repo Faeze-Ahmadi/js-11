@@ -7,23 +7,28 @@
 const contactList = [];
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-document.addEventListener("click", () => {
-    console.log("ml");
-});
-email === null || email === void 0 ? void 0 : email.addEventListener("click", () => {
-    console.log("mjkk");
-});
-const button = document.querySelector("#button");
+const SIM = document.querySelector("#SIM");
+const Device = document.querySelector("#Device");
+const button = document.querySelector("#Show_button");
+const button_2 = document.querySelector("#show_button");
+// document.addEventListener("click", () => {
+//     console.log("ml")
+// });
+// email?.addEventListener("click", () => {
+//     console.log("fm")
+// });
 button === null || button === void 0 ? void 0 : button.addEventListener("click", () => {
     var _a, _b;
-    console.log(email === null || email === void 0 ? void 0 : email.value);
+    console.log(Device === null || Device === void 0 ? void 0 : Device.checked);
     const newContact = {
         id: crypto.randomUUID(),
         contactName: (_a = email === null || email === void 0 ? void 0 : email.value) !== null && _a !== void 0 ? _a : '',
         contactNumber: (_b = password === null || password === void 0 ? void 0 : password.value) !== null && _b !== void 0 ? _b : '',
-        storage: "SIM",
+        storage: (Device === null || Device === void 0 ? void 0 : Device.checked) ? "Device" : "SIM",
         avatar: null,
     };
+    contactList.push(newContact);
+    console.log(contactList);
 });
-console.log(email);
+// console.log(email)
 //# sourceMappingURL=index.js.map

@@ -21,27 +21,31 @@ const contactList: contactListType = [];
 
 const email = document.querySelector<HTMLInputElement>("#email");
 const password = document.querySelector<HTMLInputElement>("#password");
+const SIM = document.querySelector<HTMLInputElement>("#SIM");
+const Device = document.querySelector<HTMLInputElement>("#Device");
+const button = document.querySelector<HTMLButtonElement>("#Show_button");
+const button_2 = document.querySelector<HTMLButtonElement>("#show_button");
 
-document.addEventListener("click", () => {
-    console.log("ml")
-});
+// document.addEventListener("click", () => {
+//     console.log("ml")
+// });
 
-email?.addEventListener("click", () => {
-    console.log("mjkk")
-});
+// email?.addEventListener("click", () => {
+//     console.log("fm")
+// });
 
-const button = document.querySelector<HTMLButtonElement>("#button");
+
 button?.addEventListener("click", () => {
-    console.log(email?.value)
+    console.log(Device?.checked)
     const newContact: contactProps = {
         id: crypto.randomUUID(),
         contactName: email?.value ?? '',
         contactNumber: password?.value ?? '',
-        storage: "SIM",
+        storage: Device?. checked ? "Device" : "SIM",
         avatar: null,
     }
+    contactList.push(newContact);
+    console.log(contactList);
 });
 
-
-
-console.log(email)
+// console.log(email)
