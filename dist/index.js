@@ -9,14 +9,24 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const SIM = document.querySelector("#SIM");
 const Device = document.querySelector("#Device");
-const button = document.querySelector("#Show_button");
+const button = document.querySelector("#add_button");
 const button_2 = document.querySelector("#show_button");
+const drawer_List = document.querySelector("#drawer_List");
+const removeButton = document.querySelector("#removeButton");
 // document.addEventListener("click", () => {
 //     console.log("ml")
 // });
 // email?.addEventListener("click", () => {
 //     console.log("fm")
 // });
+button_2 === null || button_2 === void 0 ? void 0 : button_2.addEventListener("click", () => {
+    drawer_List === null || drawer_List === void 0 ? void 0 : drawer_List.classList.remove("bottom-[-100%]");
+    drawer_List === null || drawer_List === void 0 ? void 0 : drawer_List.classList.add("bottom-[-0%]");
+});
+removeButton === null || removeButton === void 0 ? void 0 : removeButton.addEventListener("click", () => {
+    drawer_List === null || drawer_List === void 0 ? void 0 : drawer_List.classList.remove("bottom-[-0%]");
+    drawer_List === null || drawer_List === void 0 ? void 0 : drawer_List.classList.add("bottom-[-100%]");
+});
 button === null || button === void 0 ? void 0 : button.addEventListener("click", () => {
     var _a, _b;
     console.log(Device === null || Device === void 0 ? void 0 : Device.checked);

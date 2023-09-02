@@ -23,8 +23,10 @@ const email = document.querySelector<HTMLInputElement>("#email");
 const password = document.querySelector<HTMLInputElement>("#password");
 const SIM = document.querySelector<HTMLInputElement>("#SIM");
 const Device = document.querySelector<HTMLInputElement>("#Device");
-const button = document.querySelector<HTMLButtonElement>("#Show_button");
+const button = document.querySelector<HTMLButtonElement>("#add_button");
 const button_2 = document.querySelector<HTMLButtonElement>("#show_button");
+const drawer_List = document.querySelector<HTMLButtonElement>("#drawer_List");
+const removeButton = document.querySelector<HTMLButtonElement>("#removeButton");
 
 // document.addEventListener("click", () => {
 //     console.log("ml")
@@ -34,6 +36,15 @@ const button_2 = document.querySelector<HTMLButtonElement>("#show_button");
 //     console.log("fm")
 // });
 
+button_2?.addEventListener("click", () => {
+    drawer_List?.classList.remove("bottom-[-100%]");
+    drawer_List?.classList.add("bottom-[-0%]");
+});
+
+removeButton?.addEventListener("click", () => {
+    drawer_List?.classList.remove("bottom-[-0%]");
+    drawer_List?.classList.add("bottom-[-100%]");
+});
 
 button?.addEventListener("click", () => {
     console.log(Device?.checked)
