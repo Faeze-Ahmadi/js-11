@@ -27,6 +27,7 @@ const button = document.querySelector<HTMLButtonElement>("#add_button");
 const button_2 = document.querySelector<HTMLButtonElement>("#show_button");
 const drawer_List = document.querySelector<HTMLButtonElement>("#drawer_List");
 const removeButton = document.querySelector<HTMLButtonElement>("#removeButton");
+const listcontactas = document.querySelector<HTMLUListElement>("#removeButton");
 
 // document.addEventListener("click", () => {
 //     console.log("ml")
