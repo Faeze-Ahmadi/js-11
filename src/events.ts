@@ -11,7 +11,7 @@ import {
     listcontactas,
 } from "./importer.js";
 
-import {contactList} from "./states";
+import {contactList} from "./states.js";
 
 
 export const showContactButtonHandler = () => {
