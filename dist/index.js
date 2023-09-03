@@ -1,10 +1,12 @@
-"use strict";
 // let age: number = 12;
 // let nam: string = "faeze";
 // type person = string;
 // const person: person[] = ["ali", "faeze"];
 // person.push("zahra")
-Object.defineProperty(exports, "__esModule", { value: true });
+// console.log(person)
+// import { contactProps , contactListType } from "./src/types";
+import { button, button_2, removeButton } from "./src/importer.js";
+import { showContactButtonHandler, closeContactButtonHandler, HandlerCreatContact } from "./src/events.js";
 // type contactProps = {
 //     id: string;
 //     contactName: string;
@@ -13,52 +15,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //     avatar: string | null;
 // }
 // type contactListType = contactProps[];
-const contactList = [];
-const email = document.querySelector("#email");
-const password = document.querySelector("#password");
-const SIM = document.querySelector("#SIM");
-const Device = document.querySelector("#Device");
-const button = document.querySelector("#add_button");
-const button_2 = document.querySelector("#show_button");
-const drawer_List = document.querySelector("#drawer_List");
-const removeButton = document.querySelector("#removeButton");
-const listcontactas = document.querySelector("#listcontactas");
+// const contactList: contactListType = [];
+// const email = document.querySelector<HTMLInputElement>("#email");
+// const password = document.querySelector<HTMLInputElement>("#password");
+// const SIM = document.querySelector<HTMLInputElement>("#SIM");
+// const Device = document.querySelector<HTMLInputElement>("#Device");
+// const button = document.querySelector<HTMLButtonElement>("#add_button");
+// const button_2 = document.querySelector<HTMLButtonElement>("#show_button");
+// const drawer_List = document.querySelector<HTMLButtonElement>("#drawer_List");
+// const removeButton = document.querySelector<HTMLButtonElement>("#removeButton");
+// const listcontactas = document.querySelector<HTMLUListElement>("#listcontactas");
 // document.addEventListener("click", () => {
 //     console.log("ml")
 // });
 // email?.addEventListener("click", () => {
 //     console.log("fm")
 // });
-button_2?.addEventListener("click", () => {
-    drawer_List?.classList.remove("bottom-[-100%]");
-    drawer_List?.classList.add("bottom-[-0%]");
-});
-removeButton?.addEventListener("click", () => {
-    drawer_List?.classList.remove("bottom-[-0%]");
-    drawer_List?.classList.add("bottom-[-100%]");
-});
-button?.addEventListener("click", () => {
-    console.log(Device?.checked);
-    const newContact = {
-        id: crypto.randomUUID(),
-        contactName: email?.value ?? '',
-        contactNumber: password?.value ?? '',
-        storage: Device?.checked ? "Device" : "SIM",
-        avatar: null,
-    };
-    contactList.push(newContact);
-    const listItem = document.createElement("li");
-    listItem.className = "py-4 px-2 bg-white rounded-lg";
-    const contactNameItem = document.createElement("h2");
-    contactNameItem.className = "text-slate-700";
-    contactNameItem.innerText = newContact.contactName;
-    const phoneNumberItem = document.createElement("p");
-    phoneNumberItem.className = "text-slate-500";
-    phoneNumberItem.innerText = newContact.contactNumber.toString();
-    listItem.appendChild(contactNameItem);
-    listItem.appendChild(phoneNumberItem);
-    listcontactas?.appendChild(listItem);
-    console.log(contactList);
-});
+button_2?.addEventListener("click", showContactButtonHandler);
+removeButton?.addEventListener("click", closeContactButtonHandler);
+button?.addEventListener("click", HandlerCreatContact);
 // console.log(email)
 //# sourceMappingURL=index.js.map
