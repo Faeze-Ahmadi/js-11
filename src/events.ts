@@ -13,6 +13,8 @@ import {
 
 import {contactList} from "./states.js";
 
+import {createListItem} from "./functions.js";
+
 
 export const showContactButtonHandler = () => {
     button_2?.addEventListener("click", () => {
@@ -39,19 +41,24 @@ export const HandlerCreatContact = () => {
             avatar: null,
         }
         contactList.push(newContact);
+        
+        createListItem({
+            contactName: newContact.contactName,
+            contactNumber: newContact.contactNumber.toString(),
+        })
+
+        // const listItem = document.createElement("li");
+        // listItem.className = "py-4 px-2 bg-white rounded-lg";
+        // const contactNameItem = document.createElement("h2");
+        // contactNameItem.className = "text-slate-700";
+        // contactNameItem.innerText = newContact.contactName;
+        // const phoneNumberItem = document.createElement("p");
+        // phoneNumberItem.className = "text-slate-500";
+        // phoneNumberItem.innerText = newContact.contactNumber.toString();
     
-        const listItem = document.createElement("li");
-        listItem.className = "py-4 px-2 bg-white rounded-lg";
-        const contactNameItem = document.createElement("h2");
-        contactNameItem.className = "text-slate-700";
-        contactNameItem.innerText = newContact.contactName;
-        const phoneNumberItem = document.createElement("p");
-        phoneNumberItem.className = "text-slate-500";
-        phoneNumberItem.innerText = newContact.contactNumber.toString();
     
-    
-        listItem.appendChild(contactNameItem);
-        listItem.appendChild(phoneNumberItem);
-        listcontactas?.appendChild(listItem);
+        // listItem.appendChild(contactNameItem);
+        // listItem.appendChild(phoneNumberItem);
+        // listcontactas?.appendChild(listItem);
     });   
 };

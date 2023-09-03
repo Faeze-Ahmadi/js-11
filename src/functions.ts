@@ -2,7 +2,7 @@ import {listcontactas} from "./importer.js";
 import {contactInfoType} from "./types.js"
  
 
-const createListItem = (contactInfo: contactInfoType) => {
+export const createListItem = (contactInfo: contactInfoType) => {
     const listItem = document.createElement("li");
     listItem.className = "py-4 px-2 bg-white rounded-lg";
     const contactNameItem = document.createElement("h2");
