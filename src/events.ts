@@ -1,4 +1,4 @@
-import { contactProps ,} from "./types";
+import { contactInfoType, contactProps ,} from "./types";
 
 import {
     email,
@@ -13,7 +13,7 @@ import {
 
 import {contactList} from "./states.js";
 
-import {createListItem} from "./functions.js";
+import {createListItem, validateFieldes} from "./functions.js";
 
 
 export const showContactButtonHandler = () => {
@@ -30,7 +30,17 @@ export const closeContactButtonHandler = () => {
     });   
 };
 
+const validateCreateContact = (contactInfo: contactInfoType) => {
+    if (!validateFieldes(contactInfo.contactName, contactInfo.contactNumber.toString()))
+        return alert("fill all fields!");
+        throw Error("fill all fields!");
+};
+
 export const HandlerCreatContact = () => {
+    validateCreateContact({
+        contactName: email!.value, 
+        contactNumber: password!.value
+    });
     button?.addEventListener("click", () => {
         console.log(Device?.checked)
         const newContact: contactProps = {

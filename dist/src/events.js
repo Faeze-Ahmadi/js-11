@@ -1,6 +1,6 @@
 import { email, password, Device, button, button_2, removeButton, drawer_List, listcontactas, } from "./importer.js";
 import { contactList } from "./states.js";
-import { createListItem } from "./functions.js";
+import { createListItem, validateFieldes } from "./functions.js";
 export const showContactButtonHandler = () => {
     button_2?.addEventListener("click", () => {
         drawer_List?.classList.remove("bottom-[-100%]");
@@ -13,7 +13,16 @@ export const closeContactButtonHandler = () => {
         drawer_List?.classList.add("bottom-[-100%]");
     });
 };
+const validateCreateContact = (contactInfo) => {
+    if (!validateFieldes(contactInfo.contactName, contactInfo.contactNumber.toString()))
+        return alert("fill all fields!");
+    throw Error("fill all fields!");
+};
 export const HandlerCreatContact = () => {
+    validateCreateContact({
+        contactName: email.value,
+        contactNumber: password.value
+    });
     button?.addEventListener("click", () => {
         console.log(Device?.checked);
         const newContact = {

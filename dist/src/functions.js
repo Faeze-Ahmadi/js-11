@@ -12,4 +12,7 @@ export const createListItem = (contactInfo) => {
     // listcontactas?.appendChild(listItem);
     return listItem;
 };
+export const validateFieldes = (...fieldes) => {
+    return fieldes.every((field) => !!(field).toString());
+};
 //# sourceMappingURL=functions.js.map

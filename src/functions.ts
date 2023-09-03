@@ -18,3 +18,7 @@ export const createListItem = (contactInfo: contactInfoType): HTMLLIElement => {
     // listcontactas?.appendChild(listItem);
     return listItem
 };
+
+export const validateFieldes = (...fieldes: string[]): boolean => {
+    return fieldes.every((field) => !!(field).toString());
+};
