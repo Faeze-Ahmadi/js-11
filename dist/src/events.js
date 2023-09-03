@@ -1,4 +1,4 @@
-import { email, password, Device, button, button_2, removeButton, drawer_List, } from "./importer.js";
+import { email, password, Device, button, button_2, removeButton, drawer_List, listcontactas, } from "./importer.js";
 import { contactList } from "./states.js";
 import { createListItem } from "./functions.js";
 export const showContactButtonHandler = () => {
@@ -24,10 +24,11 @@ export const HandlerCreatContact = () => {
             avatar: null,
         };
         contactList.push(newContact);
-        createListItem({
+        const listItem = createListItem({
             contactName: newContact.contactName,
             contactNumber: newContact.contactNumber.toString(),
         });
+        listcontactas?.appendChild(listItem);
         // const listItem = document.createElement("li");
         // listItem.className = "py-4 px-2 bg-white rounded-lg";
         // const contactNameItem = document.createElement("h2");

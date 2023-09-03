@@ -1,4 +1,3 @@
-import { listcontactas } from "./importer.js";
 export const createListItem = (contactInfo) => {
     const listItem = document.createElement("li");
     listItem.className = "py-4 px-2 bg-white rounded-lg";
@@ -10,6 +9,7 @@ export const createListItem = (contactInfo) => {
     phoneNumberItem.innerText = contactInfo.contactNumber.toString();
     listItem.appendChild(contactNameItem);
     listItem.appendChild(phoneNumberItem);
-    listcontactas?.appendChild(listItem);
+    // listcontactas?.appendChild(listItem);
+    return listItem;
 };
 //# sourceMappingURL=functions.js.map

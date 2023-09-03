@@ -42,11 +42,12 @@ export const HandlerCreatContact = () => {
         }
         contactList.push(newContact);
         
-        createListItem({
+        const listItem = createListItem({
             contactName: newContact.contactName,
             contactNumber: newContact.contactNumber.toString(),
-        })
-
+        });
+        
+        listcontactas?.appendChild(listItem);
         // const listItem = document.createElement("li");
         // listItem.className = "py-4 px-2 bg-white rounded-lg";
         // const contactNameItem = document.createElement("h2");
