@@ -4,6 +4,15 @@
 // type person = string;
 // const person: person[] = ["ali", "faeze"];
 // person.push("zahra")
+Object.defineProperty(exports, "__esModule", { value: true });
+// type contactProps = {
+//     id: string;
+//     contactName: string;
+//     contactNumber: string | Number;
+//     storage: "SIM" | "Device";
+//     avatar: string | null;
+// }
+// type contactListType = contactProps[];
 const contactList = [];
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");

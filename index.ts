@@ -6,16 +6,18 @@
 
 // console.log(person)
 
-type contactProps = {
-    id: string;
-    contactName: string;
-    contactNumber: string | Number;
-    storage: "SIM" | "Device";
-    avatar: string | null;
+import { contactProps , contactListType } from "./src/types";
 
-}
+// type contactProps = {
+//     id: string;
+//     contactName: string;
+//     contactNumber: string | Number;
+//     storage: "SIM" | "Device";
+//     avatar: string | null;
 
-type contactListType = contactProps[];
+// }
+
+// type contactListType = contactProps[];
 const contactList: contactListType = [];
 
 
