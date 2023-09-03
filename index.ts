@@ -27,7 +27,7 @@ const button = document.querySelector<HTMLButtonElement>("#add_button");
 const button_2 = document.querySelector<HTMLButtonElement>("#show_button");
 const drawer_List = document.querySelector<HTMLButtonElement>("#drawer_List");
 const removeButton = document.querySelector<HTMLButtonElement>("#removeButton");
-const listcontactas = document.querySelector<HTMLUListElement>("#removeButton");
+const listcontactas = document.querySelector<HTMLUListElement>("#listcontactas");
 
 // document.addEventListener("click", () => {
 //     console.log("ml")
@@ -57,6 +57,21 @@ button?.addEventListener("click", () => {
         avatar: null,
     }
     contactList.push(newContact);
+
+    const listItem = document.createElement("li");
+    listItem.className = "py-4 px-2 bg-white rounded-lg";
+    const contactNameItem = document.createElement("h2");
+    contactNameItem.className = "text-slate-700";
+    contactNameItem.innerText = newContact.contactName;
+    const phoneNumberItem = document.createElement("p");
+    phoneNumberItem.className = "text-slate-500";
+    phoneNumberItem.innerText = newContact.contactNumber.toString();
+
+
+    listItem.appendChild(contactNameItem);
+    listItem.appendChild(phoneNumberItem);
+
+    listcontactas?.appendChild(listItem);
     console.log(contactList);
 });
 

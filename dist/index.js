@@ -13,7 +13,7 @@ const button = document.querySelector("#add_button");
 const button_2 = document.querySelector("#show_button");
 const drawer_List = document.querySelector("#drawer_List");
 const removeButton = document.querySelector("#removeButton");
-const listcontactas = document.querySelector("#removeButton");
+const listcontactas = document.querySelector("#listcontactas");
 // document.addEventListener("click", () => {
 //     console.log("ml")
 // });
@@ -39,6 +39,17 @@ button === null || button === void 0 ? void 0 : button.addEventListener("click",
         avatar: null,
     };
     contactList.push(newContact);
+    const listItem = document.createElement("li");
+    listItem.className = "py-4 px-2 bg-white rounded-lg";
+    const contactNameItem = document.createElement("h2");
+    contactNameItem.className = "text-slate-700";
+    contactNameItem.innerText = newContact.contactName;
+    const phoneNumberItem = document.createElement("p");
+    phoneNumberItem.className = "text-slate-500";
+    phoneNumberItem.innerText = newContact.contactNumber.toString();
+    listItem.appendChild(contactNameItem);
+    listItem.appendChild(phoneNumberItem);
+    listcontactas === null || listcontactas === void 0 ? void 0 : listcontactas.appendChild(listItem);
     console.log(contactList);
 });
 // console.log(email)
