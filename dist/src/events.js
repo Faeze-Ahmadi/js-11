@@ -1,5 +1,6 @@
 import { email, password, Device, button, button_2, removeButton, drawer_List, listcontactas, } from "./importer.js";
 import { contactList } from "./states.js";
+import { createListItem, validateFieldes } from "./functions.js";
 export const showContactButtonHandler = () => {
     button_2?.addEventListener("click", () => {
         drawer_List?.classList.remove("bottom-[-100%]");
@@ -12,7 +13,16 @@ export const closeContactButtonHandler = () => {
         drawer_List?.classList.add("bottom-[-100%]");
     });
 };
+const validateCreateContact = (contactInfo) => {
+    if (!validateFieldes(contactInfo.contactName, contactInfo.contactNumber.toString()))
+        return alert("fill all fields!");
+    throw Error("fill all fields!");
+};
 export const HandlerCreatContact = () => {
+    validateCreateContact({
+        contactName: email.value,
+        contactNumber: password.value
+    });
     button?.addEventListener("click", () => {
         console.log(Device?.checked);
         const newContact = {
@@ -23,16 +33,10 @@ export const HandlerCreatContact = () => {
             avatar: null,
         };
         contactList.push(newContact);
-        const listItem = document.createElement("li");
-        listItem.className = "py-4 px-2 bg-white rounded-lg";
-        const contactNameItem = document.createElement("h2");
-        contactNameItem.className = "text-slate-700";
-        contactNameItem.innerText = newContact.contactName;
-        const phoneNumberItem = document.createElement("p");
-        phoneNumberItem.className = "text-slate-500";
-        phoneNumberItem.innerText = newContact.contactNumber.toString();
-        listItem.appendChild(contactNameItem);
-        listItem.appendChild(phoneNumberItem);
+        const listItem = createListItem({
+            contactName: newContact.contactName,
+            contactNumber: newContact.contactNumber.toString(),
+        });
         listcontactas?.appendChild(listItem);
     });
 };

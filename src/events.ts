@@ -1,4 +1,4 @@
-import { contactProps ,} from "./types";
+import { contactInfoType, contactProps ,} from "./types";
 
 import {
     email,
@@ -12,6 +12,8 @@ import {
 } from "./importer.js";
 
 import {contactList} from "./states.js";
+
+import {createListItem, validateFieldes} from "./functions.js";
 
 
 export const showContactButtonHandler = () => {
@@ -28,7 +30,17 @@ export const closeContactButtonHandler = () => {
     });   
 };
 
+const validateCreateContact = (contactInfo: contactInfoType) => {
+    if (!validateFieldes(contactInfo.contactName, contactInfo.contactNumber.toString()))
+        return alert("fill all fields!");
+        throw Error("fill all fields!");
+};
+
 export const HandlerCreatContact = () => {
+    validateCreateContact({
+        contactName: email!.value, 
+        contactNumber: password!.value
+    });
     button?.addEventListener("click", () => {
         console.log(Device?.checked)
         const newContact: contactProps = {
@@ -39,19 +51,12 @@ export const HandlerCreatContact = () => {
             avatar: null,
         }
         contactList.push(newContact);
-    
-        const listItem = document.createElement("li");
-        listItem.className = "py-4 px-2 bg-white rounded-lg";
-        const contactNameItem = document.createElement("h2");
-        contactNameItem.className = "text-slate-700";
-        contactNameItem.innerText = newContact.contactName;
-        const phoneNumberItem = document.createElement("p");
-        phoneNumberItem.className = "text-slate-500";
-        phoneNumberItem.innerText = newContact.contactNumber.toString();
-    
-    
-        listItem.appendChild(contactNameItem);
-        listItem.appendChild(phoneNumberItem);
+        
+        const listItem = createListItem({
+            contactName: newContact.contactName,
+            contactNumber: newContact.contactNumber.toString(),
+        });
+
         listcontactas?.appendChild(listItem);
     });   
 };
