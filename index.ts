@@ -6,27 +6,45 @@
 
 // console.log(person)
 
-type contactProps = {
-    id: string;
-    contactName: string;
-    contactNumber: string | Number;
-    storage: "SIM" | "Device";
-    avatar: string | null;
+// import { contactProps , contactListType } from "./src/types";
+import { 
+    email,
+    password,
+    Device,
+    button,
+    button_2,
+    drawer_List,
+    removeButton,
+    listcontactas
+ } from "./src/importer.js";
+import {
+    showContactButtonHandler,
+    closeContactButtonHandler,
+    HandlerCreatContact
+} from "./src/events.js"
 
-}
+// type contactProps = {
+//     id: string;
+//     contactName: string;
+//     contactNumber: string | Number;
+//     storage: "SIM" | "Device";
+//     avatar: string | null;
 
-type contactListType = contactProps[];
-const contactList: contactListType = [];
+// }
+
+// type contactListType = contactProps[];
+// const contactList: contactListType = [];
 
 
-const email = document.querySelector<HTMLInputElement>("#email");
-const password = document.querySelector<HTMLInputElement>("#password");
-const SIM = document.querySelector<HTMLInputElement>("#SIM");
-const Device = document.querySelector<HTMLInputElement>("#Device");
-const button = document.querySelector<HTMLButtonElement>("#add_button");
-const button_2 = document.querySelector<HTMLButtonElement>("#show_button");
-const drawer_List = document.querySelector<HTMLButtonElement>("#drawer_List");
-const removeButton = document.querySelector<HTMLButtonElement>("#removeButton");
+// const email = document.querySelector<HTMLInputElement>("#email");
+// const password = document.querySelector<HTMLInputElement>("#password");
+// const SIM = document.querySelector<HTMLInputElement>("#SIM");
+// const Device = document.querySelector<HTMLInputElement>("#Device");
+// const button = document.querySelector<HTMLButtonElement>("#add_button");
+// const button_2 = document.querySelector<HTMLButtonElement>("#show_button");
+// const drawer_List = document.querySelector<HTMLButtonElement>("#drawer_List");
+// const removeButton = document.querySelector<HTMLButtonElement>("#removeButton");
+// const listcontactas = document.querySelector<HTMLUListElement>("#listcontactas");
 
 // document.addEventListener("click", () => {
 //     console.log("ml")
@@ -36,27 +54,8 @@ const removeButton = document.querySelector<HTMLButtonElement>("#removeButton");
 //     console.log("fm")
 // });
 
-button_2?.addEventListener("click", () => {
-    drawer_List?.classList.remove("bottom-[-100%]");
-    drawer_List?.classList.add("bottom-[-0%]");
-});
-
-removeButton?.addEventListener("click", () => {
-    drawer_List?.classList.remove("bottom-[-0%]");
-    drawer_List?.classList.add("bottom-[-100%]");
-});
-
-button?.addEventListener("click", () => {
-    console.log(Device?.checked)
-    const newContact: contactProps = {
-        id: crypto.randomUUID(),
-        contactName: email?.value ?? '',
-        contactNumber: password?.value ?? '',
-        storage: Device?. checked ? "Device" : "SIM",
-        avatar: null,
-    }
-    contactList.push(newContact);
-    console.log(contactList);
-});
+button_2?.addEventListener("click", showContactButtonHandler);
+removeButton?.addEventListener("click", closeContactButtonHandler);
+button?.addEventListener("click", HandlerCreatContact);
 
 // console.log(email)

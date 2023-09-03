@@ -1,0 +1,10 @@
+export const email = document.querySelector("#email");
+export const password = document.querySelector("#password");
+export const SIM = document.querySelector("#SIM");
+export const Device = document.querySelector("#Device");
+export const button = document.querySelector("#add_button");
+export const button_2 = document.querySelector("#show_button");
+export const drawer_List = document.querySelector("#drawer_List");
+export const removeButton = document.querySelector("#removeButton");
+export const listcontactas = document.querySelector("#listcontactas");
+//# sourceMappingURL=importer.js.map

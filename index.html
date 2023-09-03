@@ -34,14 +34,8 @@
                 </div>
             </div>
             
-            <!-- <button id="button" type="button" class="text-white items-center justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button> -->
             
             <div class="buttons flex justify-between">
-                <!-- <div class="text-center">
-                    <button id="add_button" class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" type="button" data-drawer-target="drawer-bottom-example" data-drawer-show="drawer-bottom-example" data-drawer-placement="bottom" aria-controls="drawer-bottom-example">
-                        Add to Contact List
-                    </button>
-                </div> -->
                 <div class="text-center">
                     <button id="add_button" class="text-white bg-pink-600 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2" type="button" data-drawer-target="drawer-bottom-example" data-drawer-show="drawer-bottom-example" data-drawer-placement="bottom" aria-controls="drawer-bottom-example">
                         Add Contact List
@@ -59,17 +53,22 @@
                 <h3 id="drawer-bottom-label" class="inline-flex items-center mb-4 text-base font-semibold text-pink-500 dark:text-pink-500"><svg class="w-4 h-4 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
             </svg>Contacs List</h3>
-                <button type="button" id="removeButton" data-drawer-hide="drawer-bottom-example" aria-controls="drawer-bottom-example" class="text-pink-500 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
+                <ul id="listcontactas" class="flex mb-11 flex-col list-none text-gray-600">
+                    <li></li>
+                    <li></li>
+                </ul>
+                <button type="button" id="removeButton" data-drawer-hide="drawer-bottom-example" aria-controls="drawer-bottom-example" class="text-pink-500 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                 </svg>
             </div>
- 
         </div>
     </form>
     
 
-
-    <script src="./dist/index.js"></script>
+    <script>
+        var exports = {};
+    </script>
+    <script type="module" src="./dist/index.js"></script>
 </body>
 </html>
